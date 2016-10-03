@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+
+  "name": "Cookie Tracker",
+  "description": "This extension logs cookies into session storage.  On every page load, cookies are parsed into an array and pushed on to an array in sessionStorage.",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "cookieTracker.png",
+    "default_popup": "cookieTracker.html"    
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.bloomingdales.com/*","http://www1.bloomingdales.com/*"],      
+      "js": ["node_modules/chart.js/dist/Chart.js", "cookieTracker.js"]
+    }
+  ]
+}
